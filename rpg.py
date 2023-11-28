@@ -22,11 +22,23 @@ def cover():
 def clear():
     os.system('cls')
 
+def credits():
+    print("""\n\n\n
+                     ______ _______  _______  __            __    __ ________ __       ______  __       __ _______   ______  __    __       ______  
+                    |      |       \|       \|  \          |  \  /  |        |  \     /      \|  \     /  |       \ /      \|  \  /  \     /      \ 
+                     \$$$$$| $$$$$$$| $$$$$$$| $$          | $$ /  $| $$$$$$$| $$    |  $$$$$$| $$\   /  $| $$$$$$$|  $$$$$$| $$ /  $$    |  $$$$$$\\
+                      | $$ | $$__/ $| $$__/ $| $$          | $$/  $$| $$__   | $$    | $$  | $| $$$\ /  $$| $$__/ $| $$  | $| $$/  $$     | $$__/ $$
+                      | $$ | $$    $| $$    $| $$          | $$  $$ | $$  \  | $$    | $$  | $| $$$$\  $$$| $$    $| $$  | $| $$  $$       \$$    $$
+                      | $$ | $$$$$$$| $$$$$$$| $$          | $$$$$\ | $$$$$  | $$    | $$  | $| $$\$$ $$ $| $$$$$$$| $$  | $| $$$$$\       _\$$$$$$$
+                     _| $$_| $$     | $$     | $$_____     | $$ \$$\| $$_____| $$____| $$__/ $| $$ \$$$| $| $$     | $$__/ $| $$ \$$\     |  \__/ $$
+                    |   $$ | $$     | $$     | $$     \    | $$  \$$| $$     | $$     \$$    $| $$  \$ | $| $$      \$$    $| $$  \$$\     \$$    $$
+                     \$$$$$$\$$      \$$      \$$$$$$$$     \$$   \$$\$$$$$$$$\$$$$$$$$\$$$$$$ \$$      \$$\$$       \$$$$$$ \$$   \$$      \$$$$$$ 
+                                                            
+    """)
+    print(' '*65, 'Anhar Mukhlis')
+    print(' '*65, 'Danu Adiwidya')
+    input()
 
-
-
-
-# unit testing ==================================================================
 
 def main_menu():
     cover()
@@ -48,25 +60,26 @@ def main_menu():
 
     # input part
     user_choice = input("\n" + " " * 75 + ">| ")
-    temp_list = [str(i + 1) for i in range(len(main_menu_options))]
+    lobby(user_choice)
 
-    if user_choice not in temp_list and user_choice != '0':
-        # alert
-        print('wrong input')
-        return main_menu()
-    return main_menu_options[int(user_choice)-1]
+
+# unit testing ==================================================================
 
 def lobby(menu):
     if menu == '1':
-        pass
+        
+        return 'play game'
     elif menu == '2':
         clear()
-        return 'IPPL KELOMPOK 9'
-        input()
+        credits()
         main_menu()
+        return 'credits menu'
     elif menu == '3':
         clear()
-        return 'Exit Game'        
+        return 'exit game'    
+    else:
+        main_menu()
+        return 'wrong input'    
 
 
 # def lobby():
@@ -74,4 +87,4 @@ def lobby(menu):
 
 # main_menu()
 if __name__ == '__main__':
-    lobby(main_menu())
+    main_menu()
