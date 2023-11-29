@@ -112,14 +112,32 @@ def dungeon_quest():
     if menu == "1":
         finished_dungeon_quest(monster_atk1, monster_def1)
         clear()
+        if finished_dungeon_quest(monster_atk1, monster_def1) == "VICTORY":
+            print("---------VICTORY---------")
+        elif finished_dungeon_quest(monster_atk1, monster_def1) == "DEFEAT":
+            print("---------DEFEAT---------")
+        elif finished_dungeon_quest(monster_atk1, monster_def1) == "DRAW":
+            print("---------DRAW---------")
         dungeon_quest()
     elif menu == "2":
         finished_dungeon_quest(monster_atk2, monster_def2)
         clear()
+        if finished_dungeon_quest(monster_atk2, monster_def2) == "VICTORY":
+            print("---------VICTORY---------")
+        elif finished_dungeon_quest(monster_atk2, monster_def2) == "DEFEAT":
+            print("---------DEFEAT---------")
+        elif finished_dungeon_quest(monster_atk2, monster_def2) == "DRAW":
+            print("---------DRAW---------")
         dungeon_quest()
     elif menu == "3":
         finished_dungeon_quest(monster_atk3, monster_def3)
         clear()
+        if finished_dungeon_quest(monster_atk3, monster_def3) == "VICTORY":
+            print("---------VICTORY---------")
+        elif finished_dungeon_quest(monster_atk3, monster_def3) == "DEFEAT":
+            print("---------DEFEAT---------")
+        elif finished_dungeon_quest(monster_atk3, monster_def3) == "DRAW":
+            print("---------DRAW---------")
         dungeon_quest()
     elif menu == "4":
         survival()
@@ -132,7 +150,7 @@ def finished_dungeon_quest(monster_atk, monster_def):
     global xp
     global money
     if char_atk + char_def > monster_atk + monster_def:
-        xp += 5
+        xp += 1
         money += 100
         return "VICTORY"
     elif char_atk + char_def < monster_atk + monster_def:
@@ -159,15 +177,18 @@ def shop_menu():
     print(" " * 58 + "=" * 40)
     print(" " * 70, f"money : {money}")
     user_choice = input("\n" + " " * 75 + ">| ")
-    shop(user_choice)
     clear()
     if user_choice == "1":
         shop(user_choice)
         clear()
+        print(" " * 68, "Success Spent Money")
+        print(" " * 68, "--------------------")
         shop_menu()
     elif user_choice == "2":
         shop(user_choice)
         clear()
+        print(" " * 68, "Success Spent Money")
+        print(" " * 68, "--------------------")
         shop_menu()
     else:
         clear()
