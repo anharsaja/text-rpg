@@ -122,7 +122,7 @@ def dungeon_quest():
         clear()
         dungeon_quest()
     elif menu == "4":
-        main_menu()
+        survival()
     else:
         clear()
         dungeon_quest()
@@ -161,7 +161,6 @@ def shop_menu():
     user_choice = input("\n" + " " * 75 + ">| ")
     shop(user_choice)
     clear()
-    shop_menu()
     if user_choice == "1":
         shop(user_choice)
         clear()
