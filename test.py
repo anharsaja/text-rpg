@@ -2,7 +2,8 @@ import unittest
 import rpg
 
 
-class testcal(unittest.TestCase):
+class testunit(unittest.TestCase):
+    # Danu
     def test_finished_dungeon_victory1(self):
         result = rpg.finished_dungeon_quest(0, 0)
         self.assertEqual(result, 'VICTORY')
@@ -11,6 +12,7 @@ class testcal(unittest.TestCase):
         result = rpg.finished_dungeon_quest(1, 0)
         self.assertEqual(result, 'VICTORY')
 
+    # Thariq
     def test_finished_dungeon_draw(self):
         result = rpg.finished_dungeon_quest(1, 1)
         self.assertEqual(result, 'DRAW')
@@ -18,6 +20,7 @@ class testcal(unittest.TestCase):
         result = rpg.finished_dungeon_quest(2, 0)
         self.assertEqual(result, 'DRAW')
 
+    # Dwi ananta
     def test_finished_dungeon_defeat(self):
         result = rpg.finished_dungeon_quest(2, 2)
         self.assertEqual(result, 'DEFEAT')
@@ -27,7 +30,7 @@ class testcal(unittest.TestCase):
         self.assertEqual(result, 'DEFEAT')
 
 
-    
+    # agung
     def test_lobby(self):
         result = rpg.lobby('3')
         self.assertEqual(result, 'exit game')
@@ -37,7 +40,7 @@ class testcal(unittest.TestCase):
         self.assertEqual(result, 'wrong input')
 
 
-
+    # anhar
     def test_shop(self):
         result = rpg.shop('1')
         self.assertEqual(result, 'success')
